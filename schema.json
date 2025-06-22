@@ -1,0 +1,183 @@
+{
+  "type": "datasource",
+  "metadata": {},
+  "schema": {
+    "docs": "https://docs.budibase.com",
+    "friendlyName": "Crypto",
+    "type": "API",
+    "description": "Stub datasource around crypto functions",
+    "datasource": {},
+    "query": {
+      "read": {
+        "displayName": "Encoding Stub",
+        "type": "fields",
+        "fields": {
+          "source": {
+            "display": "String to encode",
+            "type": "string",
+            "required": true
+          }
+        }
+      },
+      "hash": {
+        "displayName": "Hash",
+        "type": "fields",
+        "fields": {
+          "source": {
+            "display": "String to hash",
+            "type": "string",
+            "required": true
+          }
+        }
+      },
+      "encrypt": {
+        "displayName": "Encrypt",
+        "type": "fields",
+        "fields": {
+          "privateKey": {
+            "display": "Private key (base64 encoded)",
+            "type": "string",
+            "required": true
+          },
+          "source": {
+            "display": "String to encrypt",
+            "type": "string",
+            "required": true
+          }
+        }
+      },
+      "decrypt": {
+        "displayName": "Decrypt",
+        "type": "fields",
+        "fields": {
+          "publicKey": {
+            "display": "Public key (base64 encoded)",
+            "type": "string",
+            "required": true
+          },
+          "source": {
+            "display": "String to decrypt",
+            "type": "string",
+            "required": true
+          }
+        }
+      },
+      "sign": {
+        "displayName": "Sign",
+        "type": "fields",
+        "fields": {
+          "privateKey": {
+            "display": "Private key (base64 encoded)",
+            "type": "string",
+            "required": true
+          },
+          "source": {
+            "display": "String to sign",
+            "type": "string",
+            "required": true
+          }
+        }
+      },
+      "hmac": {
+        "displayName": "HMAC digest",
+        "type": "fields",
+        "fields": {
+          "privateKey": {
+            "display": "Private key (base64 encoded)",
+            "type": "string",
+            "required": true
+          },
+          "source": {
+            "display": "String to digest",
+            "type": "string",
+            "required": true
+          }
+        }
+      }
+    },
+    "extra": {
+      "algorithm": {
+        "displayName": "Algorithm",
+        "required": true,
+        "type": "list",
+        "data": {
+          "read": [
+            "stub"
+          ],
+          "hash": [
+            "MD5",
+            "SHA1",
+            "SHA256",
+            "SHA512"
+          ],
+          "hmac": [
+            "MD5",
+            "SHA1",
+            "SHA256",
+            "SHA512"
+          ],
+          "sign": [
+            "MD5",
+            "SHA1",
+            "SHA256",
+            "SHA512"
+          ],
+          "encrypt": [
+            "aes-128-cbc",
+            "aes-128-gcm",
+            "aes-192-cbc",
+            "aes-192-gcm",
+            "aes-256-cbc",
+            "aes-256-gcm",
+            "blowfish",
+            "des3-ede3-cbc"
+          ]
+        }
+      },
+      "encoding": {
+        "displayName": "Output encoding",
+        "required": false,
+        "type": "list",
+        "data": {
+          "read": [
+            "base64",
+            "hex",
+            "utf8"
+          ],
+          "hash": [
+            "base64",
+            "hex",
+            "utf8"
+          ],
+          "encrypt": [
+            "base64",
+            "hex",
+            "utf8"
+          ],
+          "sign": [
+            "base64",
+            "hex",
+            "utf8"
+          ],
+          "hmac": [
+            "base64",
+            "hex",
+            "utf8"
+          ]
+        }
+      },
+      "sourceEncoding": {
+        "displayName": "Encoding of the source string",
+        "type": "list",
+        "data": {
+          "decrypt": [
+            "base64",
+            "hex",
+            "utf8"
+          ]
+        },
+        "required": false
+      }
+    }
+  }
+}
